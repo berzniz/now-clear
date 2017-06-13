@@ -1,0 +1,12 @@
+node_modules/*
+*.tmp
+
+# IntelliJ project files
+.idea
+*.iml
+*.ipr
+*.iws
+
+# Mac files
+*.DS_Store
+

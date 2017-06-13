@@ -1,0 +1,28 @@
+{
+  "name": "now-clear",
+  "version": "0.0.1",
+  "description": "A utility to delete all zeit now instances that aren't aliased.",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "minimist": "^1.2.0",
+    "now-client": "^1.1.1"
+  },
+  "keywords": [
+    "now",
+    "zeit",
+    "clear",
+    "clean",
+    "purge",
+    "remove",
+    "delete",
+    "alias",
+    "no-alias",
+    "frozen"
+  ],
+  "bin": {
+    "now-clear": "./index.js"
+  },
+  "author": "Tal Bereznitskey <berzniz@gmail.com> (http://berzniz.com/)",
+  "license": "MIT"
+}
