@@ -1,6 +1,6 @@
 {
   "name": "now-clear",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A utility to delete all zeit now instances that aren't aliased.",
   "main": "index.js",
   "dependencies": {
@@ -20,6 +20,7 @@
     "no-alias",
     "frozen"
   ],
+  "repository": "berzniz/now-clear",
   "bin": {
     "now-clear": "./index.js"
   },
