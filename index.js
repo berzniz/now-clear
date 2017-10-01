@@ -18,8 +18,8 @@ const getTeamId = () => {
   }
 }
 
-function main (filter) {
-  const now = new Now(undefined, getTeamId())
+function main(token, teamId, deploymentName) {
+  const now = new Now(token, teamId || getTeamId())
 
   return Promise.all([
     now.getAliases(),
@@ -29,7 +29,7 @@ function main (filter) {
       !aliases.find(alias =>
         alias.deploymentId === deploy.uid
       ) && (
-        !filter || filter === deploy.name
+        !deploymentName || deploymentName === deploy.name
       )
     )
   ).then(noAliasDeployments => {
@@ -47,8 +47,14 @@ function main (filter) {
   })
 }
 
-const argv = minimist(process.argv.slice(2))
+const argv = minimist(process.argv.slice(2), {
+  alias: {
+    t: 'token',
+    n: 'name',
+    tm: 'team',
+  },
+})
 
-main(argv._[0])
+main(argv.t, argv.tm, argv.n)
   .then(res => console.log(`\nDeleted ${chalk.bold(res.length)} deployments`))
   .catch(e => console.error(e))
